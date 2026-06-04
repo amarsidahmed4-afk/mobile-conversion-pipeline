@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
 import joblib
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 # 1. Initialize the Web App
 app = FastAPI(

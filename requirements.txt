@@ -1,9 +1,8 @@
 numpy
-pandas 
+pandas
 scikit-learn
 lightgbm
-matplotlib
-seaborn
+joblib
 fastapi
 uvicorn
 pydantic
