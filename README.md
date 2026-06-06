@@ -11,6 +11,7 @@ This system operates a dynamic routing matrix (The Traffic Cop) using two frozen
 
 ## 📂 Repository Structure
 
+```text
 ├── data/raw/             # Immutable truth (Ignored in Docker build)
 ├── notebooks/            # Exploratory Lab (Ignored in Docker build)
 ├── src/
@@ -21,6 +22,7 @@ This system operates a dynamic routing matrix (The Traffic Cop) using two frozen
 ├── Dockerfile            # Debian Python:3.11-slim with libgomp1 patch
 ├── .dockerignore         # Build shield for optimal container weight
 └── requirements.txt      # Deterministic production dependencies
+```
 
 ## 🛠️ Local Development (Lab Environment)
 
