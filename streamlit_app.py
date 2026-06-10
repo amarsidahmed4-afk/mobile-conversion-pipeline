@@ -4,10 +4,9 @@ import requests
 # --- CONFIGURATION ---
 API_URL = "https://conversion-api-service-347039794179.europe-west1.run.app/predict"
 
-st.set_page_config(page_title="Conversion AI Pitch Simulator", layout="wide")
-
-st.title("🎯 Live Customer Intent & Conversion Simulator")
-st.markdown("Adjust the incoming traffic signals below to see how the dual-engine ML architecture routes the user and predicts conversion probability in real-time.")
+st.set_page_config(page_title="Realtime Ecommerce Intent Engine", page_icon="⚡")
+st.title("⚡ Realtime Ecommerce Intent Engine")
+st.markdown("Interactive simulator for the dual-engine customer journey pipeline.")
 
 # --- UI LAYOUT ---
 col1, col2, col3 = st.columns([1, 1, 1.2])
@@ -81,10 +80,11 @@ with col3:
                     st.subheader(f"Conversion Probability: {prob * 100:.1f}%")
                     st.progress(prob)
                     
+                    # --- UPDATED THRESHOLD LOGIC ---
                     if data["high_intent_flag"]:
-                        st.error("🔥 HIGH INTENT USER DETECTED - TRIGGER INCENTIVE TAGS")
+                        st.success(f"🔥 **HIGH INTENT USER DETECTED**\n\nTriggering Incentive Tags. *(Exceeded 70% optimal threshold using the {engine})*")
                     else:
-                        st.warning("🧊 COLD USER - DO NOT WASTE AD SPEND")
+                        st.warning(f"🧊 **COLD USER**\n\nNo Action Taken. *(Below 70% threshold. Engine: {engine})*")
                 else:
                     st.error(f"API Error {response.status_code}: {response.text}")
                     
